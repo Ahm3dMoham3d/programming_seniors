@@ -4,7 +4,7 @@ import logo from "@/public/logo.svg";
 import { Menu } from "lucide-react";
 import Filename from "./Filename";
 import Link from "next/link";
-import { useContext } from "react";
+
 import { useMenuStore } from "@/lib/menuStore";
 export default function Topbar() {
   const toggleMenu = useMenuStore((state: any) => state.toggleMenu);
