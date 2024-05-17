@@ -7,10 +7,15 @@ import Link from "next/link";
 
 import { useMenuStore } from "@/lib/menuStore";
 export default function Topbar() {
+  const menu = useMenuStore((state: any) => state.isOpened);
   const toggleMenu = useMenuStore((state: any) => state.toggleMenu);
+  const toggleMenuAction = () => {
+    if (menu) toggleMenu();
+  };
+
   return (
     <div className="bg-gray-950 p-3 flex items-center justify-between rounded rounded-t-lg gap-6">
-      <Link onClick={toggleMenu} href="/" className="">
+      <Link onClick={() => toggleMenuAction()} href="/" className="">
         <Image width={30} src={logo} alt="vs_code" />
       </Link>
       <div className="flex-auto max-w-[500px]">
