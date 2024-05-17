@@ -22,9 +22,7 @@ export default function Sidebar() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log("called");
     index().then((e) => {
-      // setData(e);
       setMemories(e);
       setLoading(false);
     });
@@ -55,7 +53,6 @@ export default function Sidebar() {
                 return <MemoryFile id={e.id} name={e.name} key={i} />;
               })
             )}
-            {}
           </ScrollArea>
         </div>
       </div>
